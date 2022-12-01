@@ -1,0 +1,48 @@
+<div class="container">
+  <p class="logo"><span class="logo-first-letter">S</span>electel Weather</p>
+  <div class="form">
+    <form [formGroup]="cityForm" class="form" (ngSubmit)="submit()">
+      <input
+        class="form__control"
+        type="text"
+        placeholder="Enter city to get weather"
+        formControlName="cityToGetWeather" />
+    </form>
+    <button class="button" (click)="submit()">Send</button>
+  </div>
+  <p class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </p>
+  <div class="example">
+    <p><span class="example__text" (click)="searchCity(cityForExpample)">{{ cityForExpample }}</span> for example</p>
+  </div>
+  <div class="content" *ngIf="weatherListByDay">
+    <p class="content__title">
+      WEATHER IN {{ showedCity }}
+    </p>
+    <div class="filters">
+      <button class="button" (click)="sortByTimeUp()">Date up</button>
+      <button class="button" (click)="sortByTimeDown()">Date down</button>
+      <button class="button" (click)="sortByTempUp()">Temp up</button>
+      <button class="button" (click)="sortByTempDown()">Temp down</button>
+    </div>
+    <div class="weather-list">
+      <ng-container *ngFor="let day of weatherListByDay">
+        <div class="weather-card">
+          <div class="weather-card__date">
+            <div class="weather-card__date__date">
+              {{day.date}}
+            </div>
+            <div class="weather-card__date__time">
+              {{day.time}}
+            </div>
+          </div>
+          <img class="weather-card__img" [src]="'assets/pics/' + day.weather + '.png'" alt="">
+          <div>
+            {{day.temperature}} C
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

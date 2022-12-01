@@ -1,0 +1,100 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+.logo {
+  font-size: 34px;
+  &-first-letter {
+    color: red;
+  }
+}
+.form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &__control {
+    width: 250px;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid #eee;
+    transition: .3s border-color;
+    padding: 0 10px;
+    margin-right: 10px;
+  }
+}
+.button{
+  width: 130px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 25px;
+  border: 1px solid;
+  background: red;
+  color: #ffffff;
+}
+.example {
+  &__text {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+.content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  &__title {
+    text-align: center;
+    font-size: 48px;
+  }
+}
+.error {
+  color: red;
+}
+.weather-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+}
+
+.weather-card {
+  width: 130px;
+  height: 200px;
+  border: 1px solid gray;
+  box-shadow: 10px 5px 5px gray;;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    &__date {
+      font-size: 18px;
+    }
+    &__time {
+      font-size: 16px;
+    }
+  }
+
+  &__img {
+    width: 60px;
+    height: 60px;
+  }
+}
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
