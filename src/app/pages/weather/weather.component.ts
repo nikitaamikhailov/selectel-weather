@@ -87,7 +87,6 @@ export class WeatherComponent implements OnInit {
     const city = paramsList.get('city');
     if (city) {
       this.searchCity(city);
-      console.log(city);
     }
   }
 
