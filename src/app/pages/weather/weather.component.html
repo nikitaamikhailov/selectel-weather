@@ -13,6 +13,9 @@
   <p class="error" *ngIf="errorMessage">
     {{ errorMessage }}
   </p>
+  <p class="error" *ngIf="cityForm.controls['cityToGetWeather'].hasError('pattern')">
+    You wrote something wrong
+  </p>
   <div class="example">
     <p><span class="example__text" (click)="searchCity(cityForExpample)">{{ cityForExpample }}</span> for example</p>
   </div>

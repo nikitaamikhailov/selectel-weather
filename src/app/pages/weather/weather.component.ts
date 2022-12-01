@@ -68,7 +68,7 @@ export class WeatherComponent implements OnInit {
 
   public cityForm: FormGroup = this._formBuilder.group(
     {
-      cityToGetWeather: [null, [Validators.required]],
+      cityToGetWeather: [null, [Validators.required, Validators.pattern(/^[A-Za-z0-9]/)]],
     }
   )
 
