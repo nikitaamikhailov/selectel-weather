@@ -92,16 +92,13 @@ export class WeatherComponent implements OnInit {
   }
 
   public searchCity(city: string) {
+    this.weatherService.errorMessage.next('');
     this.weatherService.getWeatherByCity(city).pipe(take(1))
       .subscribe(
-        (weatherList: IWeatherListDay[] | string) => {
-          if (typeof weatherList === "string") {
-            this.errorMessage = weatherList;
-          } else {
+        (weatherList: IWeatherListDay[]) => {
             this.weatherListByDay = weatherList;
             this.showedCity = city.toUpperCase();
             this.saveCityInURL(city);
-          }
         }
       );
   }
@@ -116,7 +113,6 @@ export class WeatherComponent implements OnInit {
   }
 
   public submit() {
-    this.errorMessage = '';
     if (this.cityForm.invalid) {
       return;
     }

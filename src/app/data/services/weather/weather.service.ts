@@ -15,7 +15,7 @@ export class WeatherService {
 
   public errorMessage: BehaviorSubject<string> = new BehaviorSubject('')
 
-  public getWeatherByCity(city: string): Observable<IWeatherListDay[] | string> {
+  public getWeatherByCity(city: string): Observable<IWeatherListDay[]> {
     return this._http.get<IResponseWeather>(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${environment.apiKey}`)
       .pipe(
         map((response: IResponseWeather) => {
